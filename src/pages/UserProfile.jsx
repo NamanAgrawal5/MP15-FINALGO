@@ -1,18 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./UserProfile.css"; // Import the CSS file
+import "./UserProfile.css";
 
 const UserProfile = () => {
   const navigate = useNavigate();
 
-  // Hardcoded user data
   const user = {
-    name: "John Doe",
-    email: "johndoe@example.com",
-    balance: "$1600",
+    name: "Naman Agrawal",
+    email: "namanagarwal578@gmail.com",
+    balance: "$2600",
+    profit: "$1600",
     totalTrades: 10,
     winRate: "80%",
-    profilePic: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", // Dummy Profile Image
+    profilePic: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
     recentTrades: [
       { id: 1, asset: "TSLA", type: "BUY", profit: "+$300" },
       { id: 2, asset: "TSLA", type: "SELL", profit: "+$250" },
