@@ -1,0 +1,15 @@
+html, body, #root, .app-container {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .content-container {
+    height: calc(100vh - 60px); /* Adjust based on TopBar height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+  

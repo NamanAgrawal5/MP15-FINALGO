@@ -1,0 +1,111 @@
+/* Global Styles */
+body {
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container */
+  .profile-container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  /* Card Layout */
+  .card {
+    background-color: #292929;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* User Info Card */
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Profile Picture */
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #f4c20d;
+  }
+  
+  /* User Details */
+  .user-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f4c20d;
+  }
+  
+  .user-email, .user-balance, .user-trades, .user-winrate {
+    margin-top: 5px;
+    color: #cccccc;
+  }
+  
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #333;
+    color: white;
+  }
+  
+  td {
+    background-color: #444;
+  }
+  
+  .buy {
+    color: #00ff00;
+  }
+  
+  .sell {
+    color: #ff4444;
+  }
+  
+  .profit {
+    color: #00ff00;
+  }
+  
+  .loss {
+    color: #ff4444;
+  }
+  
+  /* Back to Dashboard Button */
+  .back-button {
+    background-color: #f4c20d;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #d4a00d;
+  }
+  

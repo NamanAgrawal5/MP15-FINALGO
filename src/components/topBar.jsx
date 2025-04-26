@@ -1,10 +1,16 @@
 import React from 'react';
-import "./topbar.css";
+import { Link } from 'react-router-dom';
+import './topbar.css';
 
-export default function TopBar() {
-  return (
-    <div className='top'>
-      <span className="logo">FINALGO</span>
-    </div>
-  );
-}
+const Topbar = () => {
+    return (
+        <div className="topbar">
+            <div className="logo">FINALGO</div>
+            <div className="topbar-right">
+                <Link to="/login" className="login-button">Login</Link>
+            </div>
+        </div>
+    );
+};
+
+export default Topbar;

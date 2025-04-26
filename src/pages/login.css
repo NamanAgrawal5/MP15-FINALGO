@@ -1,51 +1,92 @@
-.login{
-    height: calc(100vh - 50px);
+/* Background Styling */
+body {
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    background: #0d0d0d; /* Dark Black Background */
+    font-family: Arial, sans-serif;
 }
 
-.loginTitle{
-    font-size: 50px;
+/* Centered Login Box */
+.login {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(255, 204, 0, 0.4);
+    backdrop-filter: blur(10px);
+    width: 350px;
+    text-align: center;
+    border: 2px solid #ffcc00;
 }
 
-.loginform{
-    margin-top: 20px;
+/* Title Styling */
+.loginTitle {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Form Container */
+.loginform {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
-.loginform > label{
-    margin: 10px 0;
-}
-
-.loginInput{
-    padding: 10px;
-    background-color: white;
-    border: none;
-}
-
-.loginButton{
-    margin-top: 20px;
-    cursor: pointer;
-    background-color: rgb(36, 65, 198);
-    border: none;
+/* Label Styling */
+label {
+    font-size: 14px;
+    font-weight: bold;
     color: white;
-    border-radius: 10px;
-    padding: 10px;
+    text-align: left;
+    display: block;
 }
 
-.regButton{
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: rgb(36, 65, 198);
-    margin-top: 12px;
-    color: white;
-    cursor: pointer;
-    border: none;
+/* Input Styling */
+.loginInput {
+    width: 100%;
     padding: 10px;
-    border-radius: 10px;
-    
+    border: 1px solid #ffcc00;
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Login Button */
+.loginButton {
+    width: 100%;
+    background: #ffcc00;
+    color: black;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.loginButton:hover {
+    background: white;
+    color: black;
+}
+
+/* Register Button */
+.regButton {
+    margin-top: 10px;
+    background: transparent;
+    color: #ffcc00;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.regButton:hover {
+    color: white;
 }

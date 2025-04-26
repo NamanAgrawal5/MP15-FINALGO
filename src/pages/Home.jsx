@@ -7,8 +7,10 @@ const Home = () => {
   const [data, setData] = useState([]); // Candlestick data
   const [movingAverageLevel, setMovingAverageLevel] = useState(100); // Moving average level
   const [smaData, setSmaData] = useState([]); // SMA data
+  const [stopLoss, setStopLoss] = useState(98.66);
+  const [target, setTarget] = useState(109.80);
 
-  const SMA_PERIOD =5; // Define a consistent SMA period
+  const SMA_PERIOD = 5; // Define a consistent SMA period
 
   const fetchInitialData = async () => {
     try {
@@ -53,8 +55,6 @@ const Home = () => {
     setData(updatedData);
     const sma = calculateSMA(updatedData, SMA_PERIOD); // Recalculate SMA
     setSmaData(sma);
-    console.log('Updated Data:', updatedData);
-    console.log('Updated SMA:', sma);
   };
 
   useEffect(() => {
@@ -64,42 +64,59 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-
-      <ReactApexChart
-        options={{
-          chart: {
-            type: 'candlestick',
-            height: 350,
-            animations: {
-              enabled: true,
-              easing: 'linear',
-              speed: 800, // Smooth transition for new candles
+    <div style={{ display: 'flex', flexDirection: 'column', width:'100vh', height: '100vh', background: '#121212', color: '#fff' }}>
+      
+      {/* Candlestick Chart */}
+      <div style={{ flexGrow: 1, padding: '20px' }}>
+        <ReactApexChart
+          options={{
+            chart: {
+              type: 'candlestick',
+              height: '100%',
+              animations: {
+                enabled: true,
+                easing: 'linear',
+                speed: 800, // Smooth transition for new candles
+              },
+              background: '#121212',
             },
-          },
-          xaxis: {
-            type: 'datetime',
-            range: data.length > 50 ? 50 * 2000 : undefined, // Show last 50 candles (2000ms interval)
-          },
-        }}
-        series={[
-          {
-            name: 'Candlestick',
-            type: 'candlestick',
-            data: data,
-          },
-          {
-            name: 'SMA',
-            type: 'line',
-            data: smaData,
-          },
-        ]}
-        type="candlestick"
-        height={650}
-      />
+            xaxis: {
+              type: 'datetime',
+              range: data.length > 50 ? 50 * 2000 : undefined, // Show last 50 candles (2000ms interval)
+              labels: { style: { colors: '#fff' } },
+            },
+            yaxis: {
+              labels: { style: { colors: '#fff' } },
+            },
+          }}
+          series={[
+            {
+              name: 'Candlestick',
+              type: 'candlestick',
+              data: data,
+            },
+            {
+              name: 'SMA',
+              type: 'line',
+              data: smaData,
+            },
+          ]}
+          type="candlestick"
+          height={600}
+        />
+      </div>
+
+      {/* Trading Stats Section */}
+      <div style={{ textAlign: 'center', padding: '15px', background: '#1e1e1e', borderTop: '1px solid #333' }}>
+        <h2 style={{ marginBottom: '10px', color: '#FFD700' }}>Trading Stats</h2>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
+          <div style={{ fontSize: '18px', color: '#ff4d4d' }}>Stop Loss: ${stopLoss}</div>
+          <div style={{ fontSize: '18px', color: '#4caf50' }}>Target: ${target}</div>
+        </div>
+      </div>
+
       <TradingStrategy movingAverageLevel={movingAverageLevel} onDataUpdate={handleDataUpdate} />
     </div>
-
   );
 };
 

@@ -5,18 +5,24 @@ import Login from './pages/login.jsx';
 import Register from './pages/Register.jsx';
 import CandlestickChart from './pages/Home';
 import Alpha from './components/AlphaVantage.jsx';
-
+import LandingPage from './pages/landingPage.jsx';
+import './App.css'
+import UserProfile from './pages/UserProfile.jsx';
 function App() {
   return (
     <Router>
-      <TopBar />
-      <div style={{ paddingTop: '70px' }}> {/* Add padding-top to the main content */}
-        <Routes>
-          <Route path='/reg' element={<Register />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/' element={<CandlestickChart />} />
-          <Route path='/alpha' element={<Alpha />} />
-        </Routes>
+      <div className="app-container">
+        <TopBar />
+        <div className="content-container">
+          <Routes>
+            <Route path='/' element={<LandingPage />} />
+            <Route path='/reg' element={<Register />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/home' element={<CandlestickChart />} />
+            <Route path='/alpha' element={<Alpha />} />
+            <Route path='/profile' element={<UserProfile />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
